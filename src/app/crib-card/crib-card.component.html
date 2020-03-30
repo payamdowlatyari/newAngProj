@@ -1,0 +1,32 @@
+<div class="img-thumbnail">
+        <img src="assets/images/{{crib.image}}.jpg" alt="">
+
+        <div *ngIf= "!crib.showDetails">
+                <h3>{{ crib.address }}</h3>
+                <h4>{{ crib.type }}</h4>
+            <br>
+                <button class="btn btn-success"
+                *ngIf= "!crib.showDetails"
+                (click)="crib.showDetails = !crib.showDetails">
+                    Details
+                </button>
+                <br>
+
+        </div>
+        <div *ngIf= "crib.showDetails">
+            <div class="details">
+
+                    <h3>{{ crib.price }}</h3>
+                    <h4>{{ crib.area }}</h4>
+            </div>
+            <br>
+            <button class="btn btn-danger"
+            *ngIf= "crib.showDetails"
+                (click)="crib.showDetails = !crib.showDetails">
+                    Close
+                </button>
+                <br>
+        </div>
+           
+    </div>
+   
